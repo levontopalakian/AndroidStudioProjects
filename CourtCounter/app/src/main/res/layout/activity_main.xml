@@ -4,41 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".MainActivity"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:context=".MainActivity">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
             android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
                 android:gravity="center"
-                android:padding="4dp"
-                android:text="Team A" />
+                android:padding="16dp"
+                android:text="Team A"
+                android:textColor="#616161"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/team_a_score"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
                 android:gravity="center"
-                android:padding="4dp"
-                android:textSize="24dp"
-                android:textStyle="bold"
-                android:text="0" />
+                android:paddingBottom="24dp"
+                android:text="0"
+                android:textColor="#000000"
+                android:textSize="56sp"
+                android:textStyle="bold" />
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_margin="8dp"
                 android:onClick="threepointsA"
                 android:text="+3 Points" />
@@ -58,29 +65,43 @@
                 android:text="Free Throw" />
         </LinearLayout>
 
+        <View
+            android:id="@+id/myview"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
             android:layout_weight="1"
-            android:orientation="vertical">>
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
                 android:gravity="center"
-                android:padding="4dp"
-                android:text="Team B" />
+                android:padding="16dp"
+                android:text="Team B"
+                android:textColor="#616161"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/team_b_score"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
                 android:gravity="center"
-                android:padding="4dp"
-                android:textSize="24dp"
-                android:textStyle="bold"
+                android:paddingBottom="24dp"
+                android:text="0"
+                android:textColor="#000000"
 
-                android:text="0" />
+                android:textSize="56sp"
+                android:textStyle="bold" />
 
             <Button
                 android:layout_width="match_parent"
@@ -109,11 +130,12 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0"
-        android:onClick="reset"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="24dp"
+        android:layout_weight="0"
+        android:onClick="reset"
         android:text="Reset" />
 
 </RelativeLayout>
