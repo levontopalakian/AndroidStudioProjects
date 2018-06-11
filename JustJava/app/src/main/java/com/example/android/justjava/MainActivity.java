@@ -35,7 +35,12 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        int price = quantity * 5;
+        /** int price = quantity * 5;
+         *
+
+         */
+        int price = calculatePrice();
+
         String priceMessage = "Total: $"+price+"\nThank You";
         displayMessage(priceMessage);
     }
@@ -50,6 +55,18 @@ public class MainActivity extends AppCompatActivity {
         display(quantity);
     }
 
+    /**
+     * Calculates the price of the order.
+     *
+     * @param quantity is the number of cups of coffee ordered
+     * @return total price
+     */
+    @org.jetbrains.annotations.Contract(pure = true)
+    private int calculatePrice() {
+        int price = quantity * 8;
+        return price;
+
+    }
     /**
      * This method displays the given quantity value on the screen.
      */
