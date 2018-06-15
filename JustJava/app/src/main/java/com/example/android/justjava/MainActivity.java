@@ -34,15 +34,23 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method is called when the order button is clicked.
      */
+    private String createOrderSummery (int price){
+        String priceMessage = "Name : Levon Topalakian" ;
+        priceMessage += "\nQuantity : "+quantity;
+        priceMessage += "\nTotal: $"+price+"\nThank You";
+        displayMessage(priceMessage);
+        return priceMessage;
+    }
+
     public void submitOrder(View view) {
         /** int price = quantity * 5;
          *
 
          */
         int price = calculatePrice();
+        createOrderSummery(price);
 
-        String priceMessage = "Total: $"+price+"\nThank You";
-        displayMessage(priceMessage);
+
     }
 
     public void increment(View view) {
@@ -62,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
      * @return total price
      */
     @org.jetbrains.annotations.Contract(pure = true)
+
     private int calculatePrice() {
         int price = quantity * 8;
         return price;
@@ -76,18 +85,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method displays the given price on the screen.
-     */
-    private void displayPrice(int number) {
-        TextView priceTextView = findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-    }
-
-    /**
      * This method displays the given text on the screen.
      */
     private void displayMessage(String message) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(message);
+        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
+        orderSummaryTextView.setText(message);
     }
 }
