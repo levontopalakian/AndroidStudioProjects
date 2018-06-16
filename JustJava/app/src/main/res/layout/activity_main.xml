@@ -1,71 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="10dp"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="quantity"
-        android:textAllCaps="true" />
+    android:layout_height="wrap_content">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:onClick="decrament"
-            android:text="-" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
 
         <TextView
-            android:id="@+id/quantity_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="6dp"
-            android:layout_marginRight="6dp"
-            android:text="0"
+            android:layout_marginBottom="16dp"
+            android:text="Toppings"
+            android:textAllCaps="true" />
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/whippedCream"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="24dp"
+            android:text="Whipped cream"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:text="quantity"
+            android:textAllCaps="true" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:onClick="decrament"
+                android:text="-" />
+
+            <TextView
+                android:id="@+id/quantity_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:text="0"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:onClick="increment"
+                android:text="+" />
+        </LinearLayout>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:text="ORDER SUMMARY"
+            android:textAllCaps="true" />
+
+
+        <TextView
+            android:id="@+id/order_summary_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$0"
             android:textColor="@android:color/black"
             android:textSize="16sp" />
 
         <Button
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:onClick="increment"
-            android:text="+" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:onClick="submitOrder"
+            android:text="Order" />
+
+
     </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginTop="16dp"
-        android:text="ORDER SUMMARY"
-        android:textAllCaps="true" />
-
-
-    <TextView
-        android:id="@+id/order_summary_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="$0"
-        android:textColor="@android:color/black"
-        android:textSize="16sp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:onClick="submitOrder"
-        android:text="Order" />
-</LinearLayout>
+</ScrollView>
