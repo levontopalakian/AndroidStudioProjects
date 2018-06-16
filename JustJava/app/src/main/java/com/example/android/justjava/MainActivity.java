@@ -16,9 +16,10 @@ public class MainActivity extends AppCompatActivity {
 
     int quantity = 0;
 
-    private String createOrderSummery(int price, boolean haswhippedCream) {
+    private String createOrderSummery(int price, boolean haswhippedCream,boolean haschocolate) {
         String priceMessage = "Name : Levon Topalakian";
         priceMessage += "\nAdd Whipped Cream? " + haswhippedCream;
+        priceMessage += "\nAdd Chocolate? " + haschocolate;
         priceMessage += "\nQuantity : " + quantity;
         priceMessage += "\nTotal: $" + price + "\nThank You";
 
@@ -31,7 +32,9 @@ public class MainActivity extends AppCompatActivity {
         CheckBox whippedCream = (CheckBox) findViewById(R.id.whippedCream);
         boolean haswhippedCream = whippedCream.isChecked();
         int price = calculatePrice();
-        createOrderSummery(price,haswhippedCream);
+        CheckBox chocolate = (CheckBox) findViewById(R.id.chocolate);
+        boolean haschocolate = chocolate.isChecked();
+        createOrderSummery(price,haswhippedCream,haschocolate);
     }
 
     public void increment(View view) {
