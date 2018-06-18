@@ -21,17 +21,13 @@ public class MainActivity extends AppCompatActivity {
 
     int quantity = 1;
 
-    private String createOrderSummery(int price, boolean haswhippedCream,boolean haschocolate,String customerName) {
+    private String createOrderSummery(int price, boolean haswhippedCream,boolean haschocolate,String customerName)  {
         String priceMessage = "Name : "+customerName;
         priceMessage += "\nAdd Whipped Cream? " + haswhippedCream;
         priceMessage += "\nAdd Chocolate? " + haschocolate;
         priceMessage += "\nQuantity : " + quantity;
         priceMessage += "\nTotal: $" + price + "\nThank You";
-        // Begining to start send mail via mail app
-
         displayMessage(priceMessage);
-
-
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:info@halftone-sy.com.com"));
         intent.putExtra(Intent.EXTRA_SUBJECT, "Order of "+customerName);
@@ -39,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
-
         return priceMessage;
     }
+
 
     public void submitOrder(View view) {
        //Log.v ("MainActivity","Has whipped cream: "+haswhippedCream);
