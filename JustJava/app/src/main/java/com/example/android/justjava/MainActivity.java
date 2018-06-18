@@ -1,5 +1,8 @@
 
 package com.example.android.justjava;
+
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -24,8 +27,19 @@ public class MainActivity extends AppCompatActivity {
         priceMessage += "\nAdd Chocolate? " + haschocolate;
         priceMessage += "\nQuantity : " + quantity;
         priceMessage += "\nTotal: $" + price + "\nThank You";
+        // Begining to start send mail via mail app
 
         displayMessage(priceMessage);
+
+
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:info@halftone-sy.com.com"));
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Order of "+customerName);
+        intent.putExtra(Intent.EXTRA_TEXT, priceMessage);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+
         return priceMessage;
     }
 
